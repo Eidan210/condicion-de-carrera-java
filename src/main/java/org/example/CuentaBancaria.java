@@ -1,17 +1,19 @@
 package org.example;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class CuentaBancaria {
-    private int saldo;
+    private final AtomicInteger saldo;
 
     public CuentaBancaria(int saldo){
-        this.saldo = saldo;
+        this.saldo = new AtomicInteger(saldo);
     }
 
     public int getSaldo(){
-        return saldo;
+        return saldo.intValue();
     }
 
-    public synchronized void depositar(int monto){
-        saldo += monto;
+    public void depositar(int monto){
+        saldo.addAndGet(monto);
     }
 }

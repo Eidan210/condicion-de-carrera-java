@@ -18,7 +18,7 @@ public class Main {
             hilos[i].join();
         }
 
-        System.out.println("Esperado: " + 5000);
+        System.out.println("Esperado: " + 500000);
         System.out.println("Real: " + cuenta.getSaldo());
 
     }

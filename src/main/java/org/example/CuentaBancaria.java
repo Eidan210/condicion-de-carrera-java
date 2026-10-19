@@ -11,7 +11,7 @@ public class CuentaBancaria {
         return saldo;
     }
 
-    public void depositar(int monto){
+    public synchronized void depositar(int monto){
         saldo += monto;
     }
 }
